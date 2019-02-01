@@ -27,9 +27,7 @@ def get_img_srcs(content, url):
 	for img in imgs:
 		srcs = re.findall('src=([\S]+)', img)
 		for src in srcs:
-			print(src)
 			unquoted = src.replace("\"", "")
-			print(unquoted)
 			if not any(f in unquoted for f in filter):
 				if not (unquoted.startswith("http")):
 					unquoted = url + unquoted
